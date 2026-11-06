@@ -13,9 +13,22 @@ let station = [
   { id:6, code:"JE05", name:"新浦安駅"},
 ];
 
+let arknights = [
+  { code:"R001", job:"術戦士", name:"アーミヤ"},
+  { code:"R002", job:"医師", name:"ケルシー"},
+  { code:"R00A", job:"戦術家", name:"クロージャ"},
+  { code:"RE03", job:"術師", name:"logos"},
+  { code:"R003", job:"連鎖癒師", name:"Mon3tr"},
+];
+
 app.get("/keiyo", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
   res.render('db2', { data: station });
+});
+
+app.get("/arknights", (req, res) => {
+  // 本来ならここにDBとのやり取りが入る
+  res.render('arknightsdb', { data: arknights });
 });
 
 app.get("/keiyo_add", (req, res) => {
