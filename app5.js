@@ -31,6 +31,16 @@ app.get("/arknights", (req, res) => {
   res.render('arknightsdb', { data: arknights });
 });
 
+app.get("/arknights_add", (req, res) => {
+  let code = req.query.code;
+  let job = req.query.job;
+  let name = req.query.name;
+  let newdata = { code: code, job: job, name: name };
+  arknights.push( newdata );
+  res.redirect('/public/arknights_add.html');
+
+});
+
 app.get("/keiyo_add", (req, res) => {
   let id = req.query.id;
   let code = req.query.code;
